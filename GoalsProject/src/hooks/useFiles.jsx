@@ -6,17 +6,8 @@ const useFields = () => {
     field1: "",
     field2: "",
     field3: "",
-    dataField: false,
     editMode: true,
   });
-  
-  const dataField = () => {
-    return (
-      <div>
-        {dataField && <DataGoals />}
-      </div>
-    )
-  }
   
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,7 +21,6 @@ const useFields = () => {
     e.preventDefault();
     setInputValues((prevInputValues) => ({
       ...prevInputValues,
-      dataField: true,
       editMode: false,
     }));
   };
@@ -51,7 +41,6 @@ const useFields = () => {
     handleChange,
     handleSave,
     handleEdit,
-    dataField,
     inputRef,
   };
 };

@@ -3,7 +3,7 @@ import useFields from "../hooks/useFiles";
 import DataGoals from "./DataGoals";
 
 const Fields = () => {
-    const { inputValues, handleChange, handleSave, handleEdit, dataField, inputRef } = useFields();    
+    const { inputValues, handleChange, handleSave, handleEdit, inputRef } = useFields();    
     return (
         <div>
             <h2 className='text-[1.5rem]'>Fields to improve</h2>
@@ -21,7 +21,7 @@ const Fields = () => {
                         ref={inputRef}
                     />
                     <InputButtons onEdit={handleEdit} onSave={handleSave} />      
-                    {dataField && <DataGoals /> }  
+                    {!inputValues.editMode && <DataGoals />}  
                 </div>
                 <input
                     className='input-styles'

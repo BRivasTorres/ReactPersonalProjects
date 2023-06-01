@@ -1,8 +1,8 @@
 const InputButtons = ({onEdit, onSave}) => {
   return (
-    <div className="mx-[1rem] inline-block">
-      <button onClick={onEdit} className="bg-white">Edit</button>
-      <button onClick={onSave}>Save</button>
+    <div className="inline-block">
+      <button onClick={onEdit} className="bg-buttons hover:opacity-80 active:opacity-80">Edit</button>
+      <button onClick={onSave} className="bg-buttons hover:opacity-80 active:opacity-80">Save</button>
     </div>
   )
 }

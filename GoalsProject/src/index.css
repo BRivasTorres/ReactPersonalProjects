@@ -13,3 +13,9 @@
 .input-styles {
     @apply w-[60%] h-[50px] p-4 text-[#acadbc] text-[1.5rem] rounded-[1rem] bg-[#473bf0] font-semibold my-[.5rem]
 }
+
+.bg-buttons {
+    /* background-color: linear-gradient(113deg, rgba(71, 59, 240, 1) 0%, rgba(102, 101, 221, 1) 100%); */
+    /* background-clip: text; */
+    @apply bg-gradient-to-r from-[#9b9ece] to-[#473bf0] font-bold text-[1.8rem] text-transparent bg-clip-text ml-5
+}

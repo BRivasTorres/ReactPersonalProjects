@@ -23,22 +23,30 @@ const Fields = () => {
                     <InputButtons onEdit={handleEdit} onSave={handleSave} />      
                     {!inputValues.editMode && <DataGoals />}  
                 </div>
-                <input
-                    className='input-styles'
-                    type="text"
-                    name='field2'
-                    placeholder='Put the field to improve'
-                    value={inputValues.field2}
-                    onChange={handleChange}
-                />
-                <input
-                    className='input-styles'
-                    type="text"
-                    name='field3'
-                    placeholder='Put the field to improve'
-                    value={inputValues.field3}
-                    onChange={handleChange}
-                />
+                <div>
+                    <input
+                        className='input-styles'
+                        type="text"
+                        name='field2'
+                        placeholder='Put the field to improve'
+                        value={inputValues.field2}
+                        onChange={handleChange}
+                    />
+                    <InputButtons onEdit={handleEdit} onSave={handleSave} />      
+                    {!inputValues.editMode && <DataGoals />}  
+                </div>
+                <div>
+                    <input
+                        className='input-styles'
+                        type="text"
+                        name='field3'
+                        placeholder='Put the field to improve'
+                        value={inputValues.field3}
+                        onChange={handleChange}
+                    />
+                    <InputButtons onEdit={handleEdit} onSave={handleSave} />      
+                    {!inputValues.editMode && <DataGoals />}  
+                </div>
             </form>
         </div>
     )

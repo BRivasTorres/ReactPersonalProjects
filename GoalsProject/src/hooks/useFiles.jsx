@@ -1,5 +1,4 @@
 import { useState, useRef } from "react";
-import DataGoals from "../components/DataGoals";
 
 const useFields = () => {
   const [inputValues, setInputValues] = useState({
@@ -13,29 +12,31 @@ const useFields = () => {
     const { name, value } = e.target;
     setInputValues((prevInputValues) => ({
       ...prevInputValues,
-      [name]: value,
+      [name]:value,
     }));
   };
 
-  const handleSave = (e) => {
+  const handleSave = (e, inputName) => {
     e.preventDefault();
     setInputValues((prevInputValues) => ({
       ...prevInputValues,
       editMode: false,
     }));
+    console.log(inputName)
   };
 
-  const handleEdit = (e) => {
+  const handleEdit = (e, inputName) => {
     e.preventDefault();
     setInputValues((prevInputValues) => ({
       ...prevInputValues,
       editMode: true,
     }));
     inputRef.current.focus();
+    console.log(inputName)
   };
 
   const inputRef = useRef(null);
-
+  
   return {
     inputValues,
     handleChange,

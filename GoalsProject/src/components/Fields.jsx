@@ -20,7 +20,7 @@ const Fields = () => {
                         // autoFocus={inputValues.field1.editMode}
                         ref={inputRef}
                     />
-                    <InputButtons onEdit={(e) => handleEdit(e, "input1")} onSave={(e) => handleSave(e,"input1")} />      
+                    <InputButtons onEdit={(e) => handleEdit(e, "field1")} onSave={(e) => handleSave(e,"field1")} />      
                     {inputValues.field1.editMode && <DataGoals />}  
                 </div>
                 {/* <div>
@@ -29,14 +29,14 @@ const Fields = () => {
                         type="text"
                         name='field2'
                         placeholder='Put the field to improve'
-                        value={inputValues.field2}
+                        value={inputValues.field2.text}
                         onChange={handleChange}
-                        readOnly={!inputValues.editMode}
-                        autoFocus={inputValues.editMode}
+                        readOnly={!inputValues.field2.editMode}
+                        // autoFocus={inputValues.editMode}
                         ref={inputRef}
                     />
-                    <InputButtons onEdit={(e) => handleEdit(e, "input2")} onSave={(e) => handleSave(e, "input2")} />      
-                    {!inputValues.editMode  && <DataGoals />}  
+                    <InputButtons onEdit={(e) => handleEdit(e, "field2")} onSave={(e) => handleSave(e, "field2")} />      
+                    {inputValues.field2.editMode  && <DataGoals />}  
                 </div> */}
                 {/* <div>
                     <input

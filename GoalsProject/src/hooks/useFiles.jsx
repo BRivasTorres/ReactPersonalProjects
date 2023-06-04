@@ -12,7 +12,7 @@ const useFields = () => {
     const { name, value } = e.target;
     setInputValues((prevInputValues) => ({
       ...prevInputValues,
-      [name]: {text : value},
+      [name] : value,
     }));
     console.log(value, name)
   };

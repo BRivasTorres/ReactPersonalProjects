@@ -16,8 +16,7 @@ const Fields = () => {
                         placeholder='Put the field to improve'
                         value={inputValues.field1.text}
                         onChange={handleChange}
-                        readOnly={!inputValues.field1.editMode}
-                        // autoFocus={inputValues.field1.editMode}
+                        readOnly={inputValues.field1.editMode}
                         ref={inputRef}
                     />
                     <InputButtons onEdit={(e) => handleEdit(e, "field1")} onSave={(e) => handleSave(e,"field1")} />      

@@ -14,16 +14,16 @@ const Fields = () => {
                         type="text"
                         name='field1'
                         placeholder='Put the field to improve'
-                        value={inputValues.field1}
+                        value={inputValues.field1.text}
                         onChange={handleChange}
-                        readOnly={!inputValues.editMode}
-                        autoFocus={inputValues.editMode}
+                        readOnly={!inputValues.field1.editMode}
+                        // autoFocus={inputValues.field1.editMode}
                         ref={inputRef}
                     />
                     <InputButtons onEdit={(e) => handleEdit(e, "input1")} onSave={(e) => handleSave(e,"input1")} />      
-                    {!inputValues.editMode && <DataGoals />}  
+                    {inputValues.field1.editMode && <DataGoals />}  
                 </div>
-                <div>
+                {/* <div>
                     <input
                         className='input-styles'
                         type="text"
@@ -36,8 +36,8 @@ const Fields = () => {
                         ref={inputRef}
                     />
                     <InputButtons onEdit={(e) => handleEdit(e, "input2")} onSave={(e) => handleSave(e, "input2")} />      
-                    {!inputValues.editMode && <DataGoals />}  
-                </div>
+                    {!inputValues.editMode  && <DataGoals />}  
+                </div> */}
                 {/* <div>
                     <input
                         className='input-styles'

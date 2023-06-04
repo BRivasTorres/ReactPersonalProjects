@@ -2,25 +2,26 @@ import { useState, useRef } from "react";
 
 const useFields = () => {
   const [inputValues, setInputValues] = useState({
-    field1: "",
+    field1: {text: "", editMode: false},
     field2: "",
     field3: "",
-    editMode: true,
+    // editMode: true,
   });
   
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInputValues((prevInputValues) => ({
       ...prevInputValues,
-      [name]:value,
+      [name]: {text : value},
     }));
+    console.log(value, name)
   };
 
   const handleSave = (e, inputName) => {
     e.preventDefault();
     setInputValues((prevInputValues) => ({
       ...prevInputValues,
-      editMode: false,
+      [inputName]: {editMode : true},
     }));
     console.log(inputName)
   };
@@ -29,7 +30,7 @@ const useFields = () => {
     e.preventDefault();
     setInputValues((prevInputValues) => ({
       ...prevInputValues,
-      editMode: true,
+      [inputName]: {editMode : false},
     }));
     inputRef.current.focus();
     console.log(inputName)

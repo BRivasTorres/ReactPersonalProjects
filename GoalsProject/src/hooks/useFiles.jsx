@@ -2,17 +2,16 @@ import { useState, useRef } from "react";
 
 const useFields = () => {
   const [inputValues, setInputValues] = useState({
-    field1: {text: "", editMode: false},
-    field2: "",
+    field1: {text: "", editMode: true},
+    field2: {text: "", editMode: true},
     field3: "",
-    // editMode: true,
   });
   
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInputValues((prevInputValues) => ({
       ...prevInputValues,
-      [name] : value,
+      [name] : {text:value},
     }));
     console.log(value, name)
   };
@@ -32,18 +31,22 @@ const useFields = () => {
       ...prevInputValues,
       [inputName]: {editMode : false},
     }));
-    inputRef.current.focus();
+    inputRefs[inputName].current.focus();
     console.log(inputName)
   };
 
-  const inputRef = useRef(null);
+  const inputRefs = {
+    field1: useRef(null),
+    field2: useRef(null),
+    field3: useRef(null)
+  };
   
   return {
     inputValues,
     handleChange,
     handleSave,
     handleEdit,
-    inputRef,
+    inputRefs,
   };
 };
 

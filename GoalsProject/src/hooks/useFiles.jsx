@@ -2,9 +2,9 @@ import { useState, useRef } from "react";
 
 const useFields = () => {
   const [inputValues, setInputValues] = useState({
-    field1: {text: "", editMode: true},
-    field2: {text: "", editMode: true},
-    field3: "",
+    field1: {text: "", editMode: false},
+    field2: {text: "", editMode: false},
+    field3: {text: "", editMode: false},
   });
   
   const handleChange = (e) => {
@@ -13,7 +13,6 @@ const useFields = () => {
       ...prevInputValues,
       [name] : {text:value},
     }));
-    console.log(value, name)
   };
 
   const handleSave = (e, inputName) => {
@@ -22,7 +21,6 @@ const useFields = () => {
       ...prevInputValues,
       [inputName]: {editMode : true},
     }));
-    console.log(inputName)
   };
 
   const handleEdit = (e, inputName) => {
@@ -32,7 +30,6 @@ const useFields = () => {
       [inputName]: {editMode : false},
     }));
     inputRefs[inputName].current.focus();
-    console.log(inputName)
   };
 
   const inputRefs = {

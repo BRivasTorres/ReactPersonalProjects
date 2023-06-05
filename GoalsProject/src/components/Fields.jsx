@@ -16,13 +16,13 @@ const Fields = () => {
                         placeholder='Put the field to improve'
                         value={inputValues.field1.text}
                         onChange={handleChange}
-                        readOnly={!inputValues.field1.editMode}
+                        readOnly={inputValues.field1.editMode}
                         ref={inputRefs.field1}
                     />
                     <InputButtons onEdit={(e) => handleEdit(e, "field1")} onSave={(e) => handleSave(e,"field1")} />      
-                    {!inputValues.field1.editMode && <DataGoals />}  
+                    {inputValues.field1.editMode && <DataGoals />}  
                 </div>
-                {/* <div>
+                <div>
                     <input
                         className='input-styles'
                         type="text"
@@ -33,24 +33,23 @@ const Fields = () => {
                         readOnly={inputValues.field2.editMode}
                         ref={inputRefs.field2}
                     />
-                    <InputButtons onEdit={(e) => handleEdit(e, "field2")} onSave={(e) => handleSave(e, "field2")} />      
-                    {inputValues.field2.editMode  && <DataGoals />}  
-                </div> */}
-                {/* <div>
+                    <InputButtons onEdit={(e) => handleEdit(e, "field2")} onSave={(e) => handleSave(e,"field2")} />      
+                    {inputValues.field2.editMode && <DataGoals />}  
+                </div>
+                <div>
                     <input
                         className='input-styles'
                         type="text"
                         name='field3'
                         placeholder='Put the field to improve'
-                        value={inputValues.field3}
+                        value={inputValues.field3.text}
                         onChange={handleChange}
-                        readOnly={!inputValues.editMode}
-                        autoFocus={inputValues.editMode}
-                        ref={inputRef}
+                        readOnly={inputValues.field3.editMode}
+                        ref={inputRefs.field3}
                     />
-                    <InputButtons onEdit={handleEdit} onSave={handleSave} />      
-                    {!inputValues.editMode && <DataGoals />}  
-                </div> */}
+                    <InputButtons onEdit={(e) => handleEdit(e, "field3")} onSave={(e) => handleSave(e,"field3")} />      
+                    {inputValues.field3.editMode && <DataGoals />}  
+                </div>
             </form>
         </div>
     )

@@ -24,7 +24,7 @@ const DataGoals = () => {
   };
 
   return (
-    <div className='bg-[#9b9ece] w-[40%]'>
+    <div className='bg-[#9b9ece] w-[40%] ml-[2rem]'>
       <ReactQuill value={text} onChange={handleTextChange} modules={{ toolbar: false }} formats={["image"]} className='bg-[#6665dd] text-[#acadbc] font-semibold' />
       <input type="file" accept="image/*" onChange={handleImageInsertion} className='w-[100%]' />
     </div>

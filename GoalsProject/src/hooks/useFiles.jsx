@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const useFields = () => {
   const [inputValues, setInputValues] = useState({
@@ -6,7 +6,18 @@ const useFields = () => {
     field2: {text: "", editMode: false},
     field3: {text: "", editMode: false},
   });
+
+  useEffect(() => {
+    const savedValue = JSON.parse(localStorage.getItem("inputValues"))
+    if(savedValue) {
+      setInputValues(savedValue)
+    }
+  },[])
   
+  useEffect(() => {
+    localStorage.setItem("inputValues", JSON.stringify(inputValues))
+  }, [inputValues])
+    
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInputValues((prevInputValues) => ({
